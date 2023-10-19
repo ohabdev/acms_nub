@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Attorney",
+    "subtypes": [
+      { "name": "Criminal Law" },
+      { "name": "Divorce" },
+      { "name": "Domestic Violence Criminal" },
+      { "name": "Family Law Domestic Violence" },
+      { "name": "Guardianship" },
+      { "name": "Immigration" },
+      { "name": "Traffic Court" },
+      { "name": "Eviction" }
+    ]    
+  },
+  {
+    "name": "Attorney Helper",
+    "subtypes": [
+      { "name": "Document Preparation Only" },
+      { "name": "Court Fax Filing Service" },
+      { "name": "E-filing Service" }
+    ]
+  },
+  {
+    "name": "Law Student",
+    "subtypes": [
+      { "name": "Court Filing Service" },
+      { "name": "Fax Filing Service" },
+      { "name": "E-filing Services" }
+    ]
+  }
+]

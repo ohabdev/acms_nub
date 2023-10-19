@@ -1,0 +1,34 @@
+const UserController = require('../controllers/UserController');
+const auth = require('../middleware/jwt');
+const express = require('express');
+const router = express.Router();
+
+router.get('/', auth(), UserController.getAllUsers);
+router.get('/clients', auth(), UserController.getAllClients);
+router.get('/providers', auth(), UserController.getAllProviders);
+router.get('/system-users', auth(), UserController.getAllSystemUsers);
+router.get('/me', auth(), UserController.me);
+router.post('/', auth(), UserController.create);
+router.post('/send-otp', auth(), UserController.sendOtp);
+router.post('/verify-otp', auth(), UserController.verifyOtp);
+router.post('/verify-email', auth(), UserController.verifyEmail);
+router.post('/resend-email', auth(), UserController.resendEmail);
+router.post('/forgot-password', UserController.forgotPassword);
+router.post('/reset-password', UserController.resetPassword);
+router.post('/user-type', auth(), UserController.userTypeUpdate);
+router.post('/provider-type', auth(), UserController.providerTypeUpdate);
+router.get('/provider-type', auth(), UserController.getProviderTypes);
+router.post('/change-password', auth(), UserController.changePassword);
+router.put('/', auth(), UserController.update);
+router.put('/client', auth(), UserController.updateClientProfile);
+router.put('/provider', auth(), UserController.updateProviderProfile);
+router.delete('/:userId', auth(), UserController.deleteOne);
+router.get('/provider/:providerId', auth(), UserController.getProviderDetails);
+router.put('/:userId', auth(), UserController.update);
+router.put('/client/:userId', auth(), UserController.updateClientProfile);
+router.put('/provider/:userId', auth(), UserController.updateProviderProfile);
+router.get('/check-profile-status', auth(), UserController.checkProfileStatus);
+router.get('/check-profile-status/:userId', auth(), UserController.checkProfileStatus);
+router.get('/:userId', auth(), UserController.getSingleUser);
+
+module.exports = router;

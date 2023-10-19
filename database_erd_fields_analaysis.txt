@@ -28,13 +28,13 @@ updatedAt
 services
 ============
 id
-userId
+providerTypeId
+serviceTypeid
 countryId
 stateId
 countyId
 cityId
-providerTypeId
-serviceTypeid
+userId
 isActive
 
 providerTypes
@@ -70,7 +70,7 @@ updateAt
 counties
 =========
 id
-statesId
+stateId
 name
 createdAt
 updateAt

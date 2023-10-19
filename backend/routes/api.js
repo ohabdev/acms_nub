@@ -1,0 +1,48 @@
+const express = require('express');
+const apiRouter = express.Router();
+
+const roleRouter = require('./role');
+const authRouter = require('./auth');
+const userRouter = require('./user');
+const categoryRouter = require('./category');
+const functionRouter = require('./func');
+const countryRouter = require('./country');
+const stateRouter = require('./state');
+const countyRouter = require('./county');
+const cityRouter = require('./city');
+const serviceTypeRouter = require('./serviceType');
+const serviceRouter = require('./service');
+const orderRouter = require('./order');
+const invoiceRouter = require('./invoice');
+const transactionRouter = require('./transaction');
+const reviewRouter = require('./review');
+const notificationRouter = require('./notification');
+const conversationRouter = require('./conversation');
+const messageRouter = require('./message');
+const uploadRouter = require('./upload');
+const availabilityRouter = require('./availability');
+const cityRateRouter = require('./cityRate');
+
+apiRouter.use('/auth', authRouter);
+apiRouter.use('/role', roleRouter);
+apiRouter.use('/users', userRouter);
+apiRouter.use('/category/', categoryRouter);
+apiRouter.use('/function/', functionRouter);
+apiRouter.use('/country/', countryRouter);
+apiRouter.use('/state/', stateRouter);
+apiRouter.use('/county/', countyRouter);
+apiRouter.use('/city/', cityRouter);
+apiRouter.use('/serviceType/', serviceTypeRouter);
+apiRouter.use('/service/', serviceRouter);
+apiRouter.use('/order/', orderRouter);
+apiRouter.use('/invoice/', invoiceRouter);
+apiRouter.use('/transaction/', transactionRouter);
+apiRouter.use('/review/', reviewRouter);
+apiRouter.use('/notification/', notificationRouter);
+apiRouter.use('/conversation/', conversationRouter);
+apiRouter.use('/message/', messageRouter);
+apiRouter.use('/upload/', uploadRouter);
+apiRouter.use('/availability/', availabilityRouter);
+apiRouter.use('/city-rate/', cityRateRouter);
+
+module.exports = apiRouter;

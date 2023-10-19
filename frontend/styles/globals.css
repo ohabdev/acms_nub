@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@layer base {
+  html {
+    @apply h-full scroll-smooth;
+  }
+
+  body {
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    @apply h-full font-sans text-[14px];
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+
+  a {
+    @apply text-blue-500 hover:text-blue-700;
+  }
+
+  button {
+    @apply !font-bold tracking-wide;
+  }
+
+  button:disabled {
+    @apply pointer-events-none opacity-50;
+  }
+
+  button > * {
+    @apply !font-semibold tracking-wide;
+  }
+
+  input {
+    @apply !placeholder-[#ababab];
+  }
+
+  ::-webkit-scrollbar {
+    @apply h-[7.5px] w-[7.5px];
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-black/5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary;
+  }
+}
+
+.ant-col.ant-form-item-label {
+  @apply pb-1 font-semibold;
+}
+
+.ant-input-number {
+  @apply w-full;
+}
+
+.ant-notification-notice-message {
+  @apply !mb-0;
+}
+
+.ant-dropdown .ant-dropdown-menu {
+  @apply p-0;
+}
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item {
+  @apply flex items-center rounded-none px-4 py-2 font-sans;
+}
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:not(:last-child) {
+  @apply border-b border-gray-100;
+}
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:not(:first-child) {
+  @apply hover:bg-blue-500/20 hover:text-primary;
+}
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:first-child {
+  @apply pointer-events-none py-3;
+}
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item a {
+  @apply font-semibold text-gray-800 hover:text-primary;
+}
+
+.ant-dropdown-menu-item .ant-dropdown-menu-title-content {
+  @apply !flex;
+}
+
+.ant-select-multiple .ant-select-selection-item {
+  @apply items-center;
+}
+
+.ant-upload-wrapper .ant-upload-select {
+  @apply w-full;
+}
+
+.ant-upload-wrapper .ant-upload-select button {
+  @apply w-full text-left;
+}
+
+.ant-upload-wrapper .ant-upload-select button span {
+  @apply font-normal;
+}
+
+.ant-menu-item {
+  @apply !rounded-sm;
+}
+
+.ant-menu-item a {
+  @apply font-bold !text-white;
+}
+
+.ant-menu-item:active {
+  @apply !bg-transparent;
+}
+
+.ant-menu-title-content {
+  @apply leading-normal;
+}
+
+.ant-layout-header {
+  @apply flex h-[60px] items-center pe-6 ps-6;
+}
+
+.ant-form-item-with-help .ant-form-item-explain {
+  @apply mt-1;
+}
+
+.ant-radio-button-wrapper {
+  @apply font-semibold;
+}
+
+.ant-radio-button-wrapper + span {
+  @apply font-semibold;
+}
+
+.ant-pagination-item {
+  @apply !mr-[5px];
+}
+
+.ant-table-pagination {
+  @apply !m-0 border !border-[#f0f0f0] !border-t-transparent bg-white p-2;
+}
+
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active) {
+  @apply !border border-[#e3e3e3];
+}
+
+.ant-input-suffix {
+  @apply leading-none;
+}
+
+.ant-tabs .ant-tabs-tab-btn {
+  @apply font-semibold;
+}
+
+.ant-tabs-nav .ant-tabs-ink-bar {
+  @apply !h-[3px];
+}
+
+.ant-modal-footer {
+  @apply flex items-center justify-end;
+}
