@@ -4,7 +4,7 @@ module.exports = {
 	use_env_variable: true,
 	development: {
 		username: process.env.DATABASE_USERNAME || 'root',
-		password: process.env.DATABASE_PASSWORD || 'new_password',
+		password: process.env.DATABASE_PASSWORD || '',
 		database: process.env.DATABASE_NAME || 'acms_nub',
 		host: process.env.DATABASE_HOSTNAME || 'localhost',
 		port: 3306,

@@ -67,8 +67,8 @@ exports.uploadFile = async (req, res) => {
 		}
 
 		const file = req.file;
-		const uploadFile = await uploadFileToS3(res, file.path);
-		return apiResponse.successResponseWithData(res, 'File uploaded successfully', { uploadPath: uploadFile.key });
+		// const uploadFile = await uploadFileToS3(res, file.path);
+		return apiResponse.successResponseWithData(res, 'File uploaded successfully', { uploadPath: file.path });
 	} catch (err) {
 		return apiResponse.ErrorResponse(res, err);
 	}
