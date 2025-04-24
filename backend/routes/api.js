@@ -22,6 +22,7 @@ const messageRouter = require('./message');
 const uploadRouter = require('./upload');
 const availabilityRouter = require('./availability');
 const cityRateRouter = require('./cityRate');
+const quoteRouter = require('./quote');
 
 apiRouter.use('/auth', authRouter);
 apiRouter.use('/role', roleRouter);
@@ -44,5 +45,7 @@ apiRouter.use('/message/', messageRouter);
 apiRouter.use('/upload/', uploadRouter);
 apiRouter.use('/availability/', availabilityRouter);
 apiRouter.use('/city-rate/', cityRateRouter);
+apiRouter.use('/quote/', quoteRouter);
+
 
 module.exports = apiRouter;

@@ -1,7 +1,7 @@
 {
-	"name": "ineeda",
+	"name": "acms",
 	"version": "1.0.0",
-	"description": "Api service for Ineeda",
+	"description": "Api service for attorney case management system",
 	"main": "server.js",
 	"scripts": {
 		"dev": "nodemon server.js",
