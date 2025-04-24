@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
 import { Rate } from "antd";
@@ -8,6 +8,7 @@ import Truncate from "@/components/truncate/Truncate";
 import { useMediaQuery } from "@/utils/hooks/useMediaQuery";
 import { formatUSD } from "@/utils/helpers/utilityHelper";
 import { calculateAverageRating } from "@/utils/helpers/utilityHelper";
+import {createQuote} from "@/services/quote";
 
 const CheckOutlined = dynamic(() => import("@ant-design/icons/CheckOutlined"));
 const Skeleton = dynamic(() =>
@@ -15,7 +16,27 @@ const Skeleton = dynamic(() =>
 );
 
 const ServicesSearchListItem = ({ loading, service }) => {
+
   const matches = useMediaQuery("(min-width: 768px)");
+  const [isPending, setIsPending] = useState(false);
+  
+  const handleHireMeClick = async () => {
+    try {
+      setIsPending(true);
+      
+      const qoutePayload = {
+        serviceId: service.id,
+        providerId: provider?.id,
+        price: service.price || 0.00,
+        serviceName: service.serviceName,
+      };
+      await createQuote(qoutePayload);
+
+    } catch (err) {
+      console.error("Error hiring service", err);
+      setIsPending(false);
+    } 
+  };
 
   const { provider, city, county, state, serviceName, price } = service || {};
   const { yearsOfExperience, reviews } = provider || {};
@@ -69,13 +90,22 @@ const ServicesSearchListItem = ({ loading, service }) => {
             </div>
 
             <div>
-              <Button
+              {/* <Button
                 variant="success"
                 className="mx-auto outline-none before:bg-success hover:before:bg-black/90"
                 size={matches ? "default" : "small"}
                 onClick={() => {}}
               >
                 Hire Me
+              </Button> */}
+              <Button
+                variant="success"
+                className="mx-auto outline-none before:bg-success hover:before:bg-black/90"
+                size={matches ? "default" : "small"}
+                onClick={handleHireMeClick}
+                disabled={isPending}
+              >
+                {isPending ? "Pending..." : "Hire Me"}
               </Button>
             </div>
           </div>
